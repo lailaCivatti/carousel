@@ -1,0 +1,144 @@
+//todo: make carousel work and then adapt layout
+//todo: trace progress through carousel using the two types of png dots (empty + full)
+//todo: maybe gradient backgound using gradient from _rgb.scss
+//todo: show arrows only when slide is hovered, using JS + visibility CSS property
+
+// Typography
+
+$base-font-size: 16px;
+$line-height: 1.5;
+$leading: $base-font-size * $line-height;
+$font-family: 'Amatic SC', cursive;
+
+
+// Colors
+
+$tea-green: rgba(219, 244, 173, 1);
+$tea-green-lighter: rgba(219, 244, 173, 0.3);
+$tea-green-darker: rgba(219, 244, 173, 0.5);
+$granny-smith-apple: rgba(169, 225, 144, 1);
+$dark-khaki: rgba(205, 199, 118, 1);
+$olive-green: rgba(165, 170, 82, 1);
+$spanish-bistre: rgba(118, 117, 34, 1);
+$shadow: rgb(18, 18, 5);
+$shadow-lighter: rgb(18, 18, 5, 0.3);
+
+// General Rules
+
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+body {
+    height: 100vh;
+    width: 80vw;
+    margin: 0 auto;
+    background-color: $olive-green;
+    font-size: $base-font-size;
+    line-height: $line-height;
+    font-family: $font-family;
+}
+
+.title {
+    color: $shadow;
+    text-align: center;
+    font-size: 6 * $base-font-size;
+    font-family: $font-family;
+    font-weight: 700;
+    line-height: 3 * $leading;
+    margin-top: 3 * $leading;
+    margin-bottom: $leading;
+}
+
+// Carousel
+
+.carousel {
+    display: flex;
+    flex-flow: row nowrap;
+    place-items: center;
+    width: 100%;
+    height: 80%;
+    margin: 0 auto;
+}
+
+.slide {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transition: all 0.5s;
+}
+
+.slide-img {
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 32px;
+    outline: $olive-green solid 2px;
+    outline-offset: -1rem;
+    filter: drop-shadow(0 0 0.444rem $shadow-lighter);
+}
+
+.btn {
+    box-sizing: content-box;
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.444rem;
+    margin: 0 auto;
+    border: none;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    background-color: $tea-green-lighter;
+}
+
+.btn:hover {
+    background-color: $tea-green-darker;
+}
+
+.btn:active {
+    transform: scale(1.1);
+}
+
+.btn-prev {
+    top: 45%;
+    left: 2%;
+}
+
+.btn-next {
+    top: 45%;
+    right: 2%;
+}
+
+.icon {
+    opacity: 0.3;
+}
+
+.icon:hover {
+    opacity: 0.5;
+}
+
+// Progress dots
+
+.progress {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.progress-dots {
+    max-width: max-content;
+    text-align: center;
+    display: flex;
+    flex-flow: row nowrap;
+    place-items: center;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.dots {
+    list-style: none;
+    flex: 1;
+    padding: 0;
+    margin: 0.444rem;
+}

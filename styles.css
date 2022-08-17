@@ -1,1 +1,115 @@
-/*# sourceMappingURL=styles.css.map */
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+body {
+  height: 100vh;
+  width: 80vw;
+  margin: 0 auto;
+  background-color: rgb(165, 170, 82);
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "Amatic SC", cursive;
+}
+
+.title {
+  color: rgb(18, 18, 5);
+  text-align: center;
+  font-size: 96px;
+  font-family: "Amatic SC", cursive;
+  font-weight: 700;
+  line-height: 72px;
+  margin-top: 72px;
+  margin-bottom: 24px;
+}
+
+.carousel {
+  display: flex;
+  flex-flow: row nowrap;
+  place-items: center;
+  width: 100%;
+  height: 80%;
+  margin: 0 auto;
+}
+
+.slide {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transition: all 0.5s;
+}
+
+.slide-img {
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 32px;
+  outline: rgb(165, 170, 82) solid 2px;
+  outline-offset: -1rem;
+  filter: drop-shadow(0 0 0.444rem rgba(18, 18, 5, 0.3));
+}
+
+.btn {
+  box-sizing: content-box;
+  position: absolute;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.444rem;
+  margin: 0 auto;
+  border: none;
+  border-radius: 50%;
+  z-index: 10;
+  cursor: pointer;
+  background-color: rgba(219, 244, 173, 0.3);
+}
+
+.btn:hover {
+  background-color: rgba(219, 244, 173, 0.5);
+}
+
+.btn:active {
+  transform: scale(1.1);
+}
+
+.btn-prev {
+  top: 45%;
+  left: 2%;
+}
+
+.btn-next {
+  top: 45%;
+  right: 2%;
+}
+
+.icon {
+  opacity: 0.3;
+}
+
+.icon:hover {
+  opacity: 0.5;
+}
+
+.progress {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.progress-dots {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  text-align: center;
+  display: flex;
+  flex-flow: row nowrap;
+  place-items: center;
+  padding: 0;
+  margin: 0 auto;
+}
+
+.dots {
+  list-style: none;
+  flex: 1;
+  padding: 0;
+  margin: 0.444rem;
+}/*# sourceMappingURL=styles.css.map */
