@@ -26,7 +26,7 @@ $shadow-lighter: rgb(18, 18, 5, 0.3);
 // General Rules
 
 html {
-    height: 100vh;
+    height: 100%;
     margin: 0;
     padding: 0;
     box-sizing: content-box;
@@ -34,13 +34,13 @@ html {
 
 body {
     height: 100%;
-    width: 80vw;
+    width: 80%;
     margin: 0 auto;
-    position: relative;
     background-color: $olive-green;
     font-size: $base-font-size;
     line-height: $line-height;
     font-family: $font-family;
+    position: relative;
 }
 
 .title {
@@ -57,23 +57,22 @@ body {
 // Carousel
 
 .carousel {
-    display: flex;
-    flex-flow: row nowrap;
-    place-items: center;
-    width: 100%;
+    width: 12020px;
     height: 80%;
     margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    place-items: center flex-start;
 }
 
 .slide {
-    height: 100%;
-    width: 100%;
+    width: fit-content;
     margin: 0 auto;
-    padding-bottom: 0;
 }
 
 .slide-img {
-    height: 80%;
+    object-fit: contain;
+    width: 100%;
     margin: 0 auto;
     border-radius: 32px;
     outline: $olive-green solid 2px;
@@ -104,13 +103,13 @@ body {
 }
 
 .btn-prev {
-    top: 45%;
-    left: 0;
+    top: 50%;
+    left: 5%;
 }
 
 .btn-next {
-    top: 45%;
-    right: 0;
+    top: 50%;
+    right: 5%;
 }
 
 .icon {
@@ -124,8 +123,9 @@ body {
 // Progress dots
 
 .navigation {
-    margin: -4rem auto 0;
+    margin: 0 auto;
     padding: 0;
+    z-index: 11;
 }
 
 .navigation-dots {
