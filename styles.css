@@ -1,13 +1,15 @@
 html {
+  height: 100vh;
   margin: 0;
   padding: 0;
   box-sizing: content-box;
 }
 
 body {
-  height: 100vh;
+  height: 100%;
   width: 80vw;
   margin: 0 auto;
+  position: relative;
   background-color: rgb(165, 170, 82);
   font-size: 16px;
   line-height: 1.5;
@@ -17,11 +19,11 @@ body {
 .title {
   color: rgb(18, 18, 5);
   text-align: center;
-  font-size: 96px;
+  font-size: 64px;
   font-family: "Amatic SC", cursive;
   font-weight: 700;
   line-height: 72px;
-  margin-top: 72px;
+  margin-top: 48px;
   margin-bottom: 24px;
 }
 
@@ -38,11 +40,11 @@ body {
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  transition: all 0.5s;
+  padding-bottom: 0;
 }
 
 .slide-img {
-  height: 100%;
+  height: 80%;
   margin: 0 auto;
   border-radius: 32px;
   outline: rgb(165, 170, 82) solid 2px;
@@ -74,12 +76,12 @@ body {
 
 .btn-prev {
   top: 45%;
-  left: 2%;
+  left: 0;
 }
 
 .btn-next {
   top: 45%;
-  right: 2%;
+  right: 0;
 }
 
 .icon {
@@ -90,12 +92,12 @@ body {
   opacity: 0.5;
 }
 
-.progress {
-  margin: 0 auto;
+.navigation {
+  margin: -4rem auto 0;
   padding: 0;
 }
 
-.progress-dots {
+.navigation-dots {
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content;
