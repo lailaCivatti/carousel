@@ -61,13 +61,12 @@ body {
 }
 
 .btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   box-sizing: content-box;
-  width: 2.5rem;
-  height: 2.5rem;
-  padding: 0.444rem;
-  margin: 0 auto;
   border: none;
-  border-radius: 50%;
+  border-radius: 70%;
   z-index: 10;
   cursor: pointer;
   background-color: rgba(219, 244, 173, 0.3);
@@ -75,22 +74,11 @@ body {
 
 .btn:hover {
   background-color: rgba(219, 244, 173, 0.8);
-}
-
-.btn:active {
   transform: scale(1.1);
 }
 
-.btn-prev {
-  grid-column: 2/3;
-  grid-row: 3/4;
-  margin-left: 40%;
-}
-
-.btn-next {
-  grid-column: 6/7;
-  grid-row: 3/4;
-  margin-right: 40%;
+.btn:active {
+  transform: scale(0.8);
 }
 
 .icon {
@@ -102,30 +90,47 @@ body {
 }
 
 .navigation {
-  grid-column: 4/5;
+  width: 100%;
+  grid-column: 3/6;
   grid-row: 9/10;
   margin: 0 auto;
   padding: 0;
   z-index: 11;
 }
 
-.navigation-dots {
-  max-width: -webkit-max-content;
-  max-width: -moz-max-content;
-  max-width: max-content;
+.navigation-list {
+  width: 100%;
   text-align: center;
   display: flex;
   flex-flow: row nowrap;
   place-items: center;
   padding: 0;
   margin: 0 auto;
+  list-style: none;
 }
 
-.dots {
-  list-style: none;
+.navigation-list-item {
   flex: 1;
-  padding: 0;
+  padding: 0.444rem;
   margin: 0.444rem;
+}
+
+.navigation-num {
+  color: rgb(205, 199, 118);
+  font-size: 2.225rem;
+  font-weight: 800;
+}
+
+.dot {
+  cursor: pointer;
+}
+
+.dot:hover {
+  transform: scale(1.5);
+}
+
+.dot:active {
+  transform: scale(0.8);
 }
 
 .slide--center {
