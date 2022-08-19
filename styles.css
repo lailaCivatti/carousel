@@ -6,17 +6,21 @@ html {
 }
 
 body {
-  height: 100%;
-  width: 80%;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: 2fr repeat(7, 1fr) 2fr;
   margin: 0 auto;
   background-color: rgb(165, 170, 82);
   font-size: 16px;
   line-height: 1.5;
   font-family: "Amatic SC", cursive;
-  position: relative;
 }
 
 .title {
+  grid-column: 3/6;
+  grid-row: 1/2;
   color: rgb(18, 18, 5);
   text-align: center;
   font-size: 64px;
@@ -28,12 +32,13 @@ body {
 }
 
 .carousel {
-  width: 1100%;
-  height: 80%;
+  grid-column: 2/7;
+  grid-row: 2/9;
+  width: 100%;
   margin: 0 auto;
-  display: flex;
-  flex-flow: row nowrap;
-  place-items: center flex-start;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(5, 1fr);
 }
 
 .slide {
@@ -41,6 +46,7 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
+  padding: 0;
 }
 
 .slide-img {
@@ -51,12 +57,11 @@ body {
   border-radius: 32px;
   outline: rgb(165, 170, 82) solid 2px;
   outline-offset: -1rem;
-  filter: drop-shadow(0 0 0.444rem rgba(18, 18, 5, 0.3));
+  filter: drop-shadow(0 0 0.444rem rgba(18, 18, 5, 0.5));
 }
 
 .btn {
   box-sizing: content-box;
-  position: absolute;
   width: 2.5rem;
   height: 2.5rem;
   padding: 0.444rem;
@@ -69,7 +74,7 @@ body {
 }
 
 .btn:hover {
-  background-color: rgba(219, 244, 173, 0.5);
+  background-color: rgba(219, 244, 173, 0.8);
 }
 
 .btn:active {
@@ -77,24 +82,28 @@ body {
 }
 
 .btn-prev {
-  top: 50%;
-  left: 5%;
+  grid-column: 2/3;
+  grid-row: 3/4;
+  margin-left: 40%;
 }
 
 .btn-next {
-  top: 50%;
-  right: 5%;
+  grid-column: 6/7;
+  grid-row: 3/4;
+  margin-right: 40%;
 }
 
 .icon {
-  opacity: 0.3;
-}
-
-.icon:hover {
   opacity: 0.5;
 }
 
+.icon:hover {
+  opacity: 0.8;
+}
+
 .navigation {
+  grid-column: 4/5;
+  grid-row: 9/10;
   margin: 0 auto;
   padding: 0;
   z-index: 11;
@@ -117,4 +126,29 @@ body {
   flex: 1;
   padding: 0;
   margin: 0.444rem;
+}
+
+.slide--center {
+  grid-column: 3/6;
+  grid-row: 1/5;
+  transform: scale(1, 1);
+  z-index: 1;
+}
+
+.slide--left {
+  grid-column: 1/4;
+  grid-row: 2/4;
+  transform: scale(0.8, 0.8);
+  filter: blur(5px) grayscale(20%);
+}
+
+.slide--right {
+  grid-column: 5/8;
+  grid-row: 2/4;
+  transform: scale(0.8, 0.8);
+  filter: blur(5px) grayscale(20%);
+}
+
+.slide--out {
+  display: none;
 }/*# sourceMappingURL=styles.css.map */
