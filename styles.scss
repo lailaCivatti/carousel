@@ -1,7 +1,16 @@
-//todo: make carousel work and then adapt layout
-//todo: trace progress through carousel using the two types of png dots (empty + full)
-//todo: maybe gradient backgound using gradient from _rgb.scss
-//todo: show arrows only when slide is hovered, using JS + visibility CSS property
+//todo: make design responsive;
+
+/* SCSS Gradient */
+$gradient-top: linear-gradient(0deg, #dbf4adff, #a9e190ff, #cdc776ff, #a5aa52ff, #767522ff);
+$gradient-right: linear-gradient(90deg, #dbf4adff, #a9e190ff, #cdc776ff, #a5aa52ff, #767522ff);
+$gradient-bottom: linear-gradient(180deg, #dbf4adff, #a9e190ff, #cdc776ff, #a5aa52ff, #767522ff);
+$gradient-left: linear-gradient(270deg, #dbf4adff, #a9e190ff, #cdc776ff, #a5aa52ff, #767522ff);
+$gradient-top-right: linear-gradient(45deg, #dbf4adff, #a9e190ff, #cdc776ff, #a5aa52ff, #767522ff);
+$gradient-bottom-right: linear-gradient(135deg, #dbf4adff, #a9e190ff, #cdc776ff, #a5aa52ff, #767522ff);
+$gradient-top-left: linear-gradient(225deg, #dbf4adff, #a9e190ff, #cdc776ff, #a5aa52ff, #767522ff);
+$gradient-bottom-left: linear-gradient(315deg, #dbf4adff, #a9e190ff, #cdc776ff, #a5aa52ff, #767522ff);
+$gradient-radial: radial-gradient(#dbf4adff, #a9e190ff, #cdc776ff, #a5aa52ff, #767522ff);
+$gradient-radial-alt: radial-gradient(#dbf4adff, #cdc776ff, #a5aa52ff, #767522ff);
 
 // Typography
 
@@ -15,13 +24,13 @@ $font-family: 'Amatic SC', cursive;
 
 $tea-green: rgba(219, 244, 173, 1);
 $tea-green-lighter: rgba(219, 244, 173, 0.3);
-$tea-green-darker: rgba(219, 244, 173, 0.5);
+$tea-green-darker: rgba(219, 244, 173, 0.8);
 $granny-smith-apple: rgba(169, 225, 144, 1);
 $dark-khaki: rgba(205, 199, 118, 1);
 $olive-green: rgba(165, 170, 82, 1);
 $spanish-bistre: rgba(118, 117, 34, 1);
 $shadow: rgb(18, 18, 5);
-$shadow-lighter: rgb(18, 18, 5, 0.3);
+$shadow-lighter: rgb(18, 18, 5, 0.5);
 
 // General Rules
 
@@ -33,17 +42,23 @@ html {
 }
 
 body {
-    height: 100%;
-    width: 80%;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 2fr repeat(7, 1fr) 2fr;
     margin: 0 auto;
     background-color: $olive-green;
+    background-image: $gradient-radial-alt;
     font-size: $base-font-size;
     line-height: $line-height;
     font-family: $font-family;
-    position: relative;
+
 }
 
 .title {
+    grid-column: 3/6;
+    grid-row: 1/2;
     color: $shadow;
     text-align: center;
     font-size: 4 * $base-font-size;
@@ -57,17 +72,19 @@ body {
 // Carousel
 
 .carousel {
-    width: 1100%;
-    height: 80%;
+    grid-column: 2/7;
+    grid-row: 2/9;
+    width: 100%;
     margin: 0 auto;
-    display: flex;
-    flex-flow: row nowrap;
-    place-items: center flex-start;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
 }
 
 .slide {
     width: fit-content;
     margin: 0 auto;
+    padding: 0;
 }
 
 .slide-img {
@@ -80,15 +97,13 @@ body {
     filter: drop-shadow(0 0 0.444rem $shadow-lighter);
 }
 
+// Arrow buttons
+
 .btn {
+    width: fit-content;
     box-sizing: content-box;
-    position: absolute;
-    width: 2.5rem;
-    height: 2.5rem;
-    padding: 0.444rem;
-    margin: 0 auto;
     border: none;
-    border-radius: 50%;
+    border-radius: 70%;
     z-index: 10;
     cursor: pointer;
     background-color: $tea-green-lighter;
@@ -96,51 +111,95 @@ body {
 
 .btn:hover {
     background-color: $tea-green-darker;
-}
-
-.btn:active {
     transform: scale(1.1);
 }
 
-.btn-prev {
-    top: 50%;
-    left: 5%;
-}
-
-.btn-next {
-    top: 50%;
-    right: 5%;
+.btn:active {
+    transform: scale(0.8);
 }
 
 .icon {
-    opacity: 0.3;
+    opacity: 0.5;
 }
 
 .icon:hover {
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 // Navigation dots
 
 .navigation {
+    width: 100%;
+    grid-column: 3/6;
+    grid-row: 9/10;
     margin: 0 auto;
     padding: 0;
     z-index: 11;
 }
 
-.navigation-dots {
-    max-width: max-content;
+.navigation-list {
+    width: 100%;
     text-align: center;
     display: flex;
     flex-flow: row nowrap;
     place-items: center;
     padding: 0;
     margin: 0 auto;
+    list-style: none;
 }
 
-.dots {
-    list-style: none;
+.navigation-list-item {
     flex: 1;
-    padding: 0;
+    padding: 0.444rem;
     margin: 0.444rem;
+}
+
+.navigation-num {
+    color: $dark-khaki;
+    font-size: 3.375rem;
+    font-weight: 800;
+    text-shadow: 0 0 3px $shadow-lighter;
+}
+
+.dot img {
+    filter: drop-shadow(0 0 3px $shadow-lighter);
+}
+
+.dot {
+    cursor: pointer;
+}
+
+.dot:hover {
+    transform: scale(1.5);
+}
+
+.dot:active {
+    transform: scale(0.8);
+}
+
+// JS classes
+
+.slide--center {
+    grid-column: 3/6;
+    grid-row: 1/5;
+    transform: scale(1, 1);
+    z-index: 1;
+}
+
+.slide--left {
+    grid-column: 1/4;
+    grid-row: 2/4;
+    transform: scale(0.8, 0.8);
+    filter: blur(5px) grayscale(20%);
+}
+
+.slide--right {
+    grid-column: 5/8;
+    grid-row: 2/4;
+    transform: scale(0.8, 0.8);
+    filter: blur(5px) grayscale(20%);
+}
+
+.slide--out {
+    display: none;
 }
