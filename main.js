@@ -1,3 +1,4 @@
+//todo: check for DRY;
 // Variables
 
 const slides = document.querySelectorAll(".slide");
