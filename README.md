@@ -1,6 +1,6 @@
 # This is an image carousel
 
-Here are some of the things I want it to do:
+Here are some of the things I want to do with it:
 
 1. make design responsive
 2. Have a call to action on each card, maybe pretending to be a travel website?
