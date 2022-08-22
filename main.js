@@ -14,10 +14,11 @@ const centerSlide = slides.item(0);
 const rightSlide = slides.item(1);
 const navNum = document.querySelector(".navigation-num");
 let pagNum;
+
 // Functions
 
 // Pagination
-
+// goes through slides until finding the "slide--center" one and uses its index to calculate and print image/page to navigation-num
 function getCenterSlide() {
     for (let i = 0; i <= slides.length - 1; i++) {
         let slide = slides.item(i);
@@ -31,6 +32,7 @@ function getCenterSlide() {
     // Navigation dots
 
 // resets to first slide
+// uses index to locate slides and give them the right class/position
 function start() {
     
     for (const slide of slides) {
@@ -48,6 +50,7 @@ function start() {
 };
 
 // resets to last slide
+// uses index to locate slides and give them the right class/position
 function end() {
     
     for (const slide of slides) {
