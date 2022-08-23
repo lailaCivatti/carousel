@@ -169,17 +169,20 @@ body {
   display: none;
 }
 
-@media screen and (min-width: 520px) and (max-width: 1076px) {
+@media screen and (min-width: 510px) and (max-width: 680px) {
+  .slide--center {
+    grid-column: 1/8;
+  }
   .navigation {
     grid-row: 5/6;
   }
 }
-@media screen and (min-width: 1077px) {
+@media screen and (min-width: 681px) {
   body {
     grid-template-rows: 2fr repeat(7, 1fr) 2fr;
   }
   .title {
-    font-size: 64px;
+    font-size: 56px;
     line-height: 72px;
   }
   .carousel {
@@ -194,5 +197,10 @@ body {
   }
   .slide--center {
     grid-column: 2/7;
+  }
+}
+@media screen and (min-width: 1077px) {
+  .title {
+    font-size: 64px;
   }
 }/*# sourceMappingURL=styles.css.map */

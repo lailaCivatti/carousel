@@ -205,35 +205,46 @@ $shadow-lighter: rgb(18, 18, 5, 0.5);
 
 // @media rules
 
-@media screen and (min-width:520px) and (max-width: 1076px) {
+@media screen and (min-width:510px) and (max-width: 680px) {
+
+    .slide--center{
+        grid-column: 1/8;
+    }
 
     .navigation {
         grid-row: 5/6;
     }
 }
 
-@media screen and (min-width:1077px) {
-
+@media screen and (min-width:681px) {
+    
     body {
         grid-template-rows: 2fr repeat(7, 1fr) 2fr;
     }
     
     .title {
-        font-size: 4 * $base-font-size;
+        font-size: 3.5 * $base-font-size;
         line-height: 3 * $leading;
     }
     
     .carousel {
         grid-row: 2/9;
     }
-
+    
     .navigation {
         width: fit-content;
         grid-column: 3/6;
         grid-row: 9/10;
     }
 
-    .slide--center {
+    .slide--center{
         grid-column: 2/7;
+    }
+}
+
+@media screen and (min-width:1077px) {
+
+    .title {
+        font-size: 4 * $base-font-size;
     }
 }
