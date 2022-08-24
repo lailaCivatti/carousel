@@ -159,7 +159,7 @@ body {
   display: none;
 }
 
-@media screen and (max-width: 390px) {
+@media only screen and (max-width: 390px) {
   .carousel {
     width: 90%;
   }
@@ -171,13 +171,13 @@ body {
     width: 324px;
   }
 }
-@media screen and (max-width: 1076px) and (orientation: portrait) {
+@media only screen and (max-width: 1076px) {
   .slide--left,
 .slide--right {
     display: none;
   }
 }
-@media screen and (min-width: 681px) and (orientation: portrait) {
+@media only screen and (min-width: 681px) {
   .title {
     font-size: 56px;
   }
@@ -191,7 +191,7 @@ body {
     grid-row: 1/2;
   }
 }
-@media screen and (min-width: 1077px) and (orientation: portrait) {
+@media only screen and (min-width: 1077px) {
   .title {
     font-size: 64px;
   }
@@ -207,7 +207,7 @@ body {
     grid-row: 1/2;
   }
 }
-@media screen and (min-width: 2000px) {
+@media only screen and (min-width: 2000px) {
   .title {
     font-size: 80px;
   }
@@ -218,7 +218,7 @@ body {
     margin: 0.296rem 1rem;
   }
 }
-@media screen and (orientation: landscape) and (max-height: 450px) {
+@media only screen and (orientation: landscape) and (max-height: 420px) {
   body {
     width: auto;
     height: 100%;
