@@ -222,7 +222,6 @@ body {
   body {
     width: auto;
     height: 100%;
-    overflow: hidden;
   }
   .title {
     font-size: 48px;
