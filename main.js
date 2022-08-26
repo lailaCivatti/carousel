@@ -90,7 +90,8 @@ function nextSlide() {
             slide.classList.add("slide--center");
             // if the last slide to the right is reached, grab the first slide from array to make a full circle
             if (i === slides.length-1) {
-                slides.item(0).classList.add("slide--right");
+                slides.item(0).removeAttribute("class");
+                slides.item(0).setAttribute("class", "slide slide--right");
             }
         } else if (slide.getAttribute("class").includes("slide--out")) {
             // if the slide is out and the previous slide has just become the center slide, then put slide on the right side
@@ -115,7 +116,8 @@ function prevSlide() {
             slide.classList.add("slide--center");
             // if the last slide to the left is reached, grab the first slide from array to make a full circle
             if (i == 0) {
-                slides.item(slides.length-1).classList.add("slide--left");
+                slides.item(slides.length-1).removeAttribute("class");
+                slides.item(slides.length-1).setAttribute("class", "slide slide--left");
             }
         } else if (slide.getAttribute("class").includes("slide--center")) {
             slide.classList.remove("slide--center");

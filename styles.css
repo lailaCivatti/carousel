@@ -44,7 +44,6 @@ body {
 .slide {
   margin: 0 auto;
   padding: 0;
-  transition: all 0.5s ease-in 0.25s;
 }
 
 .slide-img {
@@ -143,6 +142,7 @@ body {
   grid-row: 1/2;
   transform: scale(1);
   z-index: 5;
+  transition: z-index, filter, transform 0.2s ease-out;
 }
 
 .slide--left {
